@@ -1,0 +1,260 @@
+{
+"questions": [
+  {
+    "question": "What is the result of 2 + 2?",
+    "options": ["3", "4", "5", "6"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Which keyword is used to declare a variable in JavaScript?",
+    "options": ["var", "int", "string", "double"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the output of the following code?\n\nconsole.log(1 + '1');",
+    "options": ["2", "'11'", "11", "undefined"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What does 'DOM' stand for in web development?",
+    "options": ["Document Object Model", "Data Object Model", "Design Object Model", "Dynamic Object Manipulation"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "Which built-in method removes the last element from an array and returns that element?",
+    "options": ["pop()", "push()", "shift()", "unshift()"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What will the following code output?\n\nconsole.log(2 + '2' - 1);",
+    "options": ["3", "4", "21", "NaN"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "What is the correct way to comment out multiple lines in JavaScript?",
+    "options": ["// This is a comment", "/* This is a comment */", "# This is a comment", "-- This is a comment"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "In JavaScript, what does the '===' operator do?",
+    "options": ["Checks for equality without type conversion", "Assigns a value to a variable", "Compares values and types", "Checks if a variable is declared"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the global object in a browser environment?",
+    "options": ["window", "document", "this", "console"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "Which function is used to parse a JSON string in JavaScript?",
+    "options": ["parseJSON()", "eval()", "JSON.parse()", "stringifyJSON()"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "What is the purpose of the 'localStorage' object in JavaScript?",
+    "options": ["To store data that is only available during the current page session", "To send HTTP requests", "To manipulate the DOM", "To execute asynchronous tasks"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What does the 'new' keyword do in JavaScript?",
+    "options": ["Creates a new function", "Creates a new object", "Creates a new variable", "Creates a new array"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the primary use of the 'typeof' operator in JavaScript?",
+    "options": ["To create a new variable", "To check the type of a value or expression", "To perform mathematical operations", "To add comments to the code"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Which of the following is not a JavaScript framework or library?",
+    "options": ["jQuery", "React", "JavaBeans", "Angular"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "How do you declare a function in JavaScript?",
+    "options": ["function myFunction() {}", "var myFunction = function() {}", "def myFunction() {}", "func myFunction() {}"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'bind' method in JavaScript?",
+    "options": ["To create a new array", "To create a new function with a fixed 'this' value", "To add elements to an array", "To change the value of a variable"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Which of the following is not a valid variable name in JavaScript?",
+    "options": ["myVariable", "123variable", "_variable", "$variable"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is an IIFE in JavaScript?",
+    "options": ["Immediately Invoked Function Expression", "Inline Function Execution", "Internal If-Else Statement", "Internet Information Services for Front-End"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'return' statement in a JavaScript function?",
+    "options": ["To stop the execution of the function", "To specify the function's name", "To return a value from the function", "To declare a new variable"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "Which keyword is used to create a loop in JavaScript?",
+    "options": ["loop", "while", "for", "if"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "What does 'NaN' stand for in JavaScript?",
+    "options": ["Not a Number", "New Assignment", "No Argument", "Negative"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'fetch' API in JavaScript?",
+    "options": ["To perform asynchronous HTTP requests", "To manipulate strings", "To create new HTML elements", "To add comments to the code"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the event handler for a button click in JavaScript?",
+    "options": ["onload", "onhover", "onsubmit", "onclick"],
+    "correctAnswer": 3
+  },
+  {
+    "question": "Which method is used to add an element to the end of an array in JavaScript?",
+    "options": ["append()", "push()", "concat()", "insert()"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "How do you write a single-line comment in JavaScript?",
+    "options": ["<!-- This is a comment -->", "// This is a comment", "/* This is a comment */", "# This is a comment"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Which operator is used for strict equality in JavaScript?",
+    "options": ["==", "===", "!=", "!=="],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the purpose of the 'let' keyword in JavaScript?",
+    "options": ["To declare a variable with block scope", "To create a constant", "To define a function", "To create an object"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the 'NaN' value's type in JavaScript?",
+    "options": ["Number", "String", "Undefined", "Object"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "Which method is used to remove the last element from an array in JavaScript?",
+    "options": ["pop()", "shift()", "unshift()", "remove()"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What does the 'setTimeout' function do in JavaScript?",
+    "options": ["Delays the execution of a function or code", "Modifies the document's structure", "Performs mathematical operations", "Creates a loop"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'this' keyword in JavaScript?",
+    "options": ["To create a new variable", "To define a function", "To refer to the current object", "To execute asynchronous tasks"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "What is the purpose of the 'map' method in JavaScript?",
+    "options": ["To create a map of key-value pairs", "To modify elements in an array", "To convert strings to numbers", "To add comments to the code"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the purpose of the 'class' attribute in HTML?",
+    "options": ["To define a CSS class for an element", "To create a JavaScript class", "To add comments to the code", "To declare a variable"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "Which method is used to sort the elements of an array in JavaScript?",
+    "options": ["order()", "sort()", "arrange()", "shuffle()"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the purpose of the 'document' object in JavaScript?",
+    "options": ["To define a function", "To manipulate the DOM", "To create a new array", "To add comments to the code"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the result of the following code?\n\nconsole.log(typeof null);",
+    "options": ["object", "null", "undefined", "string"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "Which method is used to add elements to the beginning of an array in JavaScript?",
+    "options": ["append()", "push()", "concat()", "unshift()"],
+    "correctAnswer": 3
+  },
+  {
+    "question": "What is the result of the following code?\n\nconsole.log(5 == '5');",
+    "options": ["true", "false", "undefined", "NaN"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'addEventListener' method in JavaScript?",
+    "options": ["To create a new event", "To modify CSS styles", "To handle user interactions", "To create a new variable"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "What is the result of the following code?\n\nconsole.log('hello' + 'world');",
+    "options": ["hello world", "helloworld", "hello + world", "undefined"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'substring' method in JavaScript?",
+    "options": ["To create a substring", "To replace characters in a string", "To convert a number to a string", "To execute a loop"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'charAt' method in JavaScript?",
+    "options": ["To get the character at a specific index in a string", "To add a new character to a string", "To create a new array", "To declare a variable"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the 'innerHTML' property used for in JavaScript?",
+    "options": ["To store a numeric value", "To set the HTML content of an element", "To define a CSS class", "To create a new object"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the result of the following code?\n\nconsole.log(true && false);",
+    "options": ["true", "false", "undefined", "false"],
+    "correctAnswer": 3
+  },
+  {
+    "question": "What is the purpose of the 'localStorage' object in JavaScript?",
+    "options": ["To store data that is only available during the current page session", "To send HTTP requests", "To manipulate the DOM", "To execute asynchronous tasks"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What does the 'parseFloat' function do in JavaScript?",
+    "options": ["Converts a string to a floating-point number", "Converts a number to a string", "Creates a new object", "Defines a function"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the result of the following code?\n\nconsole.log(3 || 0);",
+    "options": ["true", "false", "3", "0"],
+    "correctAnswer": 2
+  },
+  {
+    "question": "What is the purpose of the 'splice' method in JavaScript?",
+    "options": ["To add elements to an array", "To remove elements from an array", "To sort an array", "To create a new array"],
+    "correctAnswer": 1
+  },
+  {
+    "question": "What is the 'NaN' value's type in JavaScript?",
+    "options": ["Number", "String", "Undefined", "Object"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the purpose of the 'querySelector' method in JavaScript?",
+    "options": ["To select and return the first element that matches a specified CSS selector", "To create a new element", "To perform mathematical operations", "To add comments to the code"],
+    "correctAnswer": 0
+  },
+  {
+    "question": "What is the result of the following code?\n\nconsole.log(1 / 0);",
+    "options": ["1", "0", "Infinity", "undefined"],
+    "correctAnswer": 2
+  }
+]
+
+}

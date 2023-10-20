@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("./pexels-dicing-rocks-jonathan-petersson-965879.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.container h1 {
+  color: #fff;
+}
+
+.question-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 90%;
+  max-width: 600px;
+  min-height: 50vh;
+  border: 3px solid #707070;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.time-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #fff;
+}
+
+.question-element {
+  margin-bottom: 10px;
+}
+
+.question-element h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.question-element p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.options-container button {
+  background-color: #351c75;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  width: 40%;
+}
+
+.next-button,
+.open-form-button {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+  margin: 30px auto 0;
+}
+
+.save-score-overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-active {
+  right: 0;
+}
+
+.save-score-overlay form {
+  background-color: #fff;
+  max-width: 400px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
+}
+
+.save-score-overlay form p {
+  text-align: center;
+}
+
+.save-score-overlay form button {
+  display: block;
+  background-color: green;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+  margin: 10px auto;
+}

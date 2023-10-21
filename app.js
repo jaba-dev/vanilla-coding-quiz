@@ -59,7 +59,9 @@ function start(event) {
       nextButton.addEventListener("click", nextQuestion);
       questionContainer.appendChild(questionElement);
       questionContainer.appendChild(optionsElement);
-      questionContainer.appendChild(nextButton);
+      if (currentQuestionIndex <= 8) {
+        questionContainer.appendChild(nextButton);
+      }
     } else {
       clearInterval(timerId);
       gameOver();
@@ -81,15 +83,13 @@ function start(event) {
     }
     // currentQuestionIndex++;
     // renderQuestion();
+    if (currentQuestionIndex >= 9) {
+      gameOver();
+    }
   }
 
   function nextQuestion(event) {
-    if (currentQuestionIndex >= 9) {
-      console.log(event.target);
-      event.target.remove();
-      console.log("equals");
-      gameOver();
-    } else if (isAnswered) {
+    if (isAnswered) {
       isAnswered = false;
       if (remainingTime > 0) {
         currentQuestionIndex++;

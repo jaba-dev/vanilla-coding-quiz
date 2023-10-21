@@ -12,6 +12,31 @@ body {
   background-position: center;
 }
 
+.start-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-overlay button {
+  display: block;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  /* width: 120px; */
+  margin: 30px auto 0;
+  font-size: 2rem;
+}
+
 .container {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
@@ -21,6 +46,46 @@ body {
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+
+.high-scores {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.high-scores button {
+  /* display: block; */
+  background-color: transparent;
+  color: #b54ce4;
+  padding: 2px 3px;
+  border: none;
+  /* border-radius: 5px; */
+  /* width: 120px; */
+  /* margin: 30px auto 0; */
+  /* font-size: 2rem; */
+}
+
+.high-scores .scores-container {
+  list-style: none;
+  background-color: #fff;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.high-scores .scores-container button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
 
 .container h1 {
@@ -52,6 +117,7 @@ body {
 .question-element h2 {
   color: #fff;
   margin-bottom: 10px;
+  margin-top: 30px;
 }
 
 .question-element p {
@@ -72,7 +138,7 @@ body {
   border: none;
   border-radius: 5px;
   text-align: left;
-  width: 40%;
+  width: 60%;
 }
 
 .next-button,
@@ -85,6 +151,13 @@ body {
   border-radius: 5px;
   width: 50%;
   margin: 30px auto 0;
+}
+
+.score-info {
+  text-align: center;
+  padding: 5px;
+  margin: 10px 0;
+  font-size: 1.5rem;
 }
 
 .save-score-overlay {

@@ -7,26 +7,30 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="start-overlay">
+      <button onclick="start(event)">start quiz</button>
+    </div>
     <div class="container">
       <div class="info-container">
         <h1>Quiz App</h1>
       </div>
       <div class="question-container">
+        <div class="high-scores">
+          <button class="high-scores-button">view high scores</button>
+        </div>
         <p class="time-container">time: <span class="time"></span></p>
       </div>
     </div>
-    <div class="high-scores-overlay">
-      <div class="high-scores-content"></div>
-    </div>
     <div class="save-score-overlay">
       <form>
+        <button class="close-form">Close</button>
         <div class="form-group">
           <label for="">Name</label>
-          <input type="text" placeholder="your name" />
+          <input type="text" name="name" placeholder="your name" />
         </div>
         <div class="form-group">
-          <label for="">Name</label>
-          <input type="text" placeholder="your lastname" />
+          <label for="">LastName</label>
+          <input type="text" name="lastName" placeholder="your lastname" />
         </div>
         <p>your score: <span class="score"></span></p>
         <button type="submit">save</button>

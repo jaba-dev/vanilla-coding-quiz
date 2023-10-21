@@ -5,7 +5,7 @@ const highScoresElement = document.querySelector(".high-scores");
 const highScoresButton = document.querySelector(".high-scores-button");
 let questions = [];
 let currentQuestionIndex = 0;
-let remainingTime = 15;
+let remainingTime = 60;
 let totalScore = 0;
 let timerId;
 let isAnswered = false;

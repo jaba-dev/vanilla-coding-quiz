@@ -3,16 +3,22 @@ const timeContainer = document.querySelector(".time-container");
 const timerEl = document.querySelector(".time");
 const highScoresElement = document.querySelector(".high-scores");
 const highScoresButton = document.querySelector(".high-scores-button");
+const startButton = document.querySelector(".start-button");
 let questions = [];
 let currentQuestionIndex = 0;
 let remainingTime = 60;
 let totalScore = 0;
 let timerId;
 let isAnswered = false;
-const highScores = JSON.parse(localStorage.getItem("scores")) || [];
+let isGameOver = false;
+let highScores = JSON.parse(localStorage.getItem("scores")) || [];
 
-function start(event) {
-  event.target.parentElement.remove();
+startButton.addEventListener("click", start);
+
+function start() {
+  if (startButton) {
+    startButton.parentElement.remove();
+  }
   highScoresButton.addEventListener("click", displayHighScores);
   function fetchQuestions() {
     fetch("./data.json")
@@ -128,23 +134,35 @@ function start(event) {
   function gameOver() {
     // openButton = document.querySelector(".open-form-button");
 
-    // if (!openButton) {
-    const nextButton = document.querySelector(".next-button");
-    if (nextButton) {
-      nextButton.remove();
+    if (!isGameOver) {
+      const nextButton = document.querySelector(".next-button");
+      const currentQuestionElement =
+        document.querySelector(".options-container");
+      currentQuestionElement.replaceWith(
+        currentQuestionElement.cloneNode(true)
+      );
+      if (nextButton) {
+        nextButton.remove();
+      }
+      setTimeout(() => {
+        const resetBtn = document.createElement("button");
+        resetBtn.addEventListener("click", reset);
+        resetBtn.classList.add("reset-button");
+        resetBtn.textContent = "reset";
+        questionContainer.prepend(resetBtn);
+
+        const scoreInfoElement = document.createElement("p");
+        scoreInfoElement.textContent = "your score is: " + totalScore;
+        scoreInfoElement.classList.add("score-info");
+        questionContainer.appendChild(scoreInfoElement);
+        const openFormButton = document.createElement("button");
+        openFormButton.classList.add("open-form-button");
+        openFormButton.textContent = "save my score";
+        openFormButton.addEventListener("click", openForm);
+        questionContainer.appendChild(openFormButton);
+      }, 300);
     }
-    setTimeout(() => {
-      const scoreInfoElement = document.createElement("p");
-      scoreInfoElement.textContent = "your score is: " + totalScore;
-      scoreInfoElement.classList.add("score-info");
-      questionContainer.appendChild(scoreInfoElement);
-      const openFormButton = document.createElement("button");
-      openFormButton.classList.add("open-form-button");
-      openFormButton.textContent = "save my score";
-      openFormButton.addEventListener("click", openForm);
-      questionContainer.appendChild(openFormButton);
-    }, 300);
-    // }
+    isGameOver = true;
   }
 
   function shuffleArray(arr) {
@@ -209,4 +227,16 @@ function start(event) {
       }, 300);
     });
   }
+}
+
+function reset() {
+  questions = [];
+  currentQuestionIndex = 0;
+  remainingTime = 60;
+  totalScore = 0;
+  timerId;
+  isAnswered = false;
+  isGameOver = false;
+  highScores = JSON.parse(localStorage.getItem("scores")) || [];
+  start();
 }

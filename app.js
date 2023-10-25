@@ -10,7 +10,7 @@ let remainingTime = 60;
 let totalScore = 0;
 let timerId;
 let isAnswered = false;
-let isGameOver = false;
+// let isGameOver = false;
 let highScores = JSON.parse(localStorage.getItem("scores")) || [];
 
 startButton.addEventListener("click", start);
@@ -33,48 +33,44 @@ function start() {
   fetchQuestions();
 
   function renderQuestion() {
-    if (currentQuestionIndex <= 9) {
-      questionContainer.innerHTML = "";
-      questionContainer.appendChild(highScoresElement);
-      questionContainer.appendChild(timeContainer);
-      let currentQuestion = questions[currentQuestionIndex];
-      const { question, options } = currentQuestion;
-      const questionElement = document.createElement("div");
+    // if (currentQuestionIndex <= 9) {
+    questionContainer.innerHTML = "";
+    questionContainer.appendChild(highScoresElement);
+    questionContainer.appendChild(timeContainer);
+    let currentQuestion = questions[currentQuestionIndex];
+    const { question, options } = currentQuestion;
+    const questionElement = document.createElement("div");
 
-      questionElement.classList.add("question-element");
-      const questionNumberElement = document.createElement("h2");
-      questionNumberElement.textContent =
-        "Question: " + (currentQuestionIndex + 1);
-      const questionTextElement = document.createElement("p");
-      questionTextElement.textContent = question;
-      questionElement.appendChild(questionNumberElement);
-      questionElement.appendChild(questionTextElement);
-      const optionsElement = document.createElement("div");
-      optionsElement.classList.add("options-container");
+    questionElement.classList.add("question-element");
+    const questionNumberElement = document.createElement("h2");
+    questionNumberElement.textContent =
+      "Question: " + (currentQuestionIndex + 1);
+    const questionTextElement = document.createElement("p");
+    questionTextElement.textContent = question;
+    questionElement.appendChild(questionNumberElement);
+    questionElement.appendChild(questionTextElement);
+    const optionsElement = document.createElement("div");
+    optionsElement.classList.add("options-container");
 
-      options.forEach((option, index) => {
-        const optionElement = document.createElement("button");
-        optionElement.textContent = index + 1 + ". " + option;
-        optionElement.id = index;
-        optionElement.addEventListener("click", checkanswer);
-        optionsElement.appendChild(optionElement);
-      });
-      const nextButton = document.createElement("button");
-      nextButton.textContent = "next";
-      nextButton.classList.add("next-button");
-      nextButton.addEventListener("click", nextQuestion);
-      questionContainer.appendChild(questionElement);
-      questionContainer.appendChild(optionsElement);
-      if (currentQuestionIndex <= 8) {
-        questionContainer.appendChild(nextButton);
-      }
-    } else {
-      clearInterval(timerId);
-      gameOver();
+    options.forEach((option, index) => {
+      const optionElement = document.createElement("button");
+      optionElement.textContent = index + 1 + ". " + option;
+      optionElement.id = index;
+      optionElement.addEventListener("click", checkAnswer);
+      optionsElement.appendChild(optionElement);
+    });
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "next";
+    nextButton.classList.add("next-button");
+    nextButton.addEventListener("click", nextQuestion);
+    questionContainer.appendChild(questionElement);
+    questionContainer.appendChild(optionsElement);
+    if (currentQuestionIndex <= 8) {
+      questionContainer.appendChild(nextButton);
     }
   }
 
-  function checkanswer(event) {
+  function checkAnswer(event) {
     isAnswered = true;
     const id = Number(event.target.getAttribute("id"));
 
@@ -87,8 +83,7 @@ function start() {
     } else {
       countDown("sub");
     }
-    // currentQuestionIndex++;
-    // renderQuestion();
+
     if (currentQuestionIndex >= 9) {
       gameOver();
     }
@@ -100,20 +95,19 @@ function start() {
       if (remainingTime > 0) {
         currentQuestionIndex++;
         renderQuestion();
-      } else {
-        event.target.replaceWith(event.target.cloneNode(true));
-        gameOver();
       }
+      //  else {
+      //   event.target.replaceWith(event.target.cloneNode(true));
+      //    gameOver();
+      // }
     }
   }
 
   function countDown(sub) {
-    clearInterval(timerId); // Clear any previous intervals
+    clearInterval(timerId);
 
     if (sub && remainingTime - 5 >= 0) {
       remainingTime = remainingTime - 5;
-    } else {
-      clearInterval(timerId);
     }
 
     if (remainingTime > 0) {
@@ -122,7 +116,6 @@ function start() {
         timerEl.textContent = remainingTime;
 
         if (remainingTime <= 0) {
-          clearInterval(timerId); // Clear the interval when the countdown reaches 0
           gameOver();
         }
       }, 1000);
@@ -132,37 +125,30 @@ function start() {
   }
 
   function gameOver() {
-    // openButton = document.querySelector(".open-form-button");
-
-    if (!isGameOver) {
-      const nextButton = document.querySelector(".next-button");
-      const currentQuestionElement =
-        document.querySelector(".options-container");
-      currentQuestionElement.replaceWith(
-        currentQuestionElement.cloneNode(true)
-      );
-      if (nextButton) {
-        nextButton.remove();
-      }
-      setTimeout(() => {
-        const resetBtn = document.createElement("button");
-        resetBtn.addEventListener("click", reset);
-        resetBtn.classList.add("reset-button");
-        resetBtn.textContent = "reset";
-        questionContainer.prepend(resetBtn);
-
-        const scoreInfoElement = document.createElement("p");
-        scoreInfoElement.textContent = "your score is: " + totalScore;
-        scoreInfoElement.classList.add("score-info");
-        questionContainer.appendChild(scoreInfoElement);
-        const openFormButton = document.createElement("button");
-        openFormButton.classList.add("open-form-button");
-        openFormButton.textContent = "save my score";
-        openFormButton.addEventListener("click", openForm);
-        questionContainer.appendChild(openFormButton);
-      }, 300);
+    const nextButton = document.querySelector(".next-button");
+    const currentQuestionElement = document.querySelector(".options-container");
+    currentQuestionElement.replaceWith(currentQuestionElement.cloneNode(true));
+    if (nextButton) {
+      nextButton.remove();
     }
-    isGameOver = true;
+    setTimeout(() => {
+      clearInterval(timerId);
+      const resetBtn = document.createElement("button");
+      resetBtn.addEventListener("click", reset);
+      resetBtn.classList.add("reset-button");
+      resetBtn.textContent = "reset";
+      questionContainer.prepend(resetBtn);
+
+      const scoreInfoElement = document.createElement("p");
+      scoreInfoElement.textContent = "your score is: " + totalScore;
+      scoreInfoElement.classList.add("score-info");
+      questionContainer.appendChild(scoreInfoElement);
+      const openFormButton = document.createElement("button");
+      openFormButton.classList.add("open-form-button");
+      openFormButton.textContent = "save my score";
+      openFormButton.addEventListener("click", openForm);
+      questionContainer.appendChild(openFormButton);
+    }, 300);
   }
 
   function shuffleArray(arr) {
@@ -236,7 +222,6 @@ function reset() {
   totalScore = 0;
   timerId;
   isAnswered = false;
-  isGameOver = false;
   highScores = JSON.parse(localStorage.getItem("scores")) || [];
   start();
 }

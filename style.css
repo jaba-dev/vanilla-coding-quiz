@@ -214,11 +214,14 @@ body {
   position: absolute;
   top: 15px;
   left: 50%;
-
   background-color: #000;
   color: #fff;
   padding: 10px;
   border: none;
   border-radius: 5px;
   transform: translateX(-50%);
+}
+
+audio {
+  display: none;
 }

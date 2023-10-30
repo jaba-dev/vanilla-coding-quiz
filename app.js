@@ -4,18 +4,19 @@ const timerEl = document.querySelector(".time");
 const highScoresElement = document.querySelector(".high-scores");
 const highScoresButton = document.querySelector(".high-scores-button");
 const startButton = document.querySelector(".start-button");
+const startingSound = document.querySelector(".start-sound");
 let questions = [];
 let currentQuestionIndex = 0;
 let remainingTime = 60;
 let totalScore = 0;
 let timerId;
 let isAnswered = false;
-// let isGameOver = false;
 let highScores = JSON.parse(localStorage.getItem("scores")) || [];
 
 startButton.addEventListener("click", start);
 
 function start() {
+  startingSound.play();
   if (startButton) {
     startButton.parentElement.remove();
   }
@@ -89,17 +90,13 @@ function start() {
     }
   }
 
-  function nextQuestion(event) {
+  function nextQuestion() {
     if (isAnswered) {
       isAnswered = false;
       if (remainingTime > 0) {
         currentQuestionIndex++;
         renderQuestion();
       }
-      //  else {
-      //   event.target.replaceWith(event.target.cloneNode(true));
-      //    gameOver();
-      // }
     }
   }
 
@@ -196,13 +193,15 @@ function start() {
     saveScoreContainer.querySelector(".score").textContent = totalScore;
     saveScoreForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const nameInput = saveScoreForm.querySelector("input[name='name']");
+      const firstNameInput = saveScoreForm.querySelector(
+        "input[name='firstName']"
+      );
       const lastNameInput = saveScoreForm.querySelector(
         "input[name='lastName']"
       );
-      if (nameInput.value && lastNameInput.value) {
+      if (firstNameInput.value && lastNameInput.value) {
         highScores.push({
-          name: nameInput.value,
+          name: firstNameInput.value,
           lastName: lastNameInput.value,
           score: totalScore,
         });
@@ -220,8 +219,8 @@ function reset() {
   currentQuestionIndex = 0;
   remainingTime = 60;
   totalScore = 0;
-  timerId;
-  isAnswered = false;
+  // timerId;
+  // isAnswered = false;
   highScores = JSON.parse(localStorage.getItem("scores")) || [];
   start();
 }
